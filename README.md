@@ -12,6 +12,13 @@ npm i
 npm start
 ```
 
+Running the Test Cases by following commands
+
+```sh
+cd my-app
+npm run test
+```
+
 Verify the application by navigating to your below address in
 your preferred browser.
 
