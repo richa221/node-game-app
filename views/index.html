@@ -55,7 +55,8 @@
 								<label for="player1Name">
 									Player 1 Name
 								</label>
-								<input class="form-control" id="player1Name" placeholder="Player 1 Name" type="text">
+								<input class="form-control" name="player1Name" id="player1Name"
+									placeholder="Player 1 Name" type="text">
 								</input>
 								<div class="invalid-feedback" id="player1NameError">
 									Please enter player name.
@@ -65,7 +66,8 @@
 								<label for="player2Name">
 									Player 2 Name
 								</label>
-								<input class="form-control" id="player2Name" placeholder="Player 2 Name" type="text">
+								<input class="form-control" name="player2Name" id="player2Name"
+									placeholder="Player 2 Name" type="text">
 								</input>
 								<div class="invalid-feedback" id="player2NameError">
 									Please enter player name.
@@ -90,6 +92,7 @@
 								<label class="col-form-label">Wins:</label>
 								<div class="col-sm-6">
 									<label class="col-form-label Player1WinCount">0</label>
+									<input type="hidden" name="Player1WinCount" id="Player1WinCount"></input>
 								</div>
 							</div>
 
@@ -106,6 +109,7 @@
 								<label class="col-form-label">Wins:</label>
 								<div class="col-sm-6">
 									<label class="col-form-label Player2WinCount">0</label>
+									<input type="hidden" name="Player2WinCount" id="Player2WinCount"></input>
 								</div>
 							</div>
 
@@ -115,6 +119,7 @@
 								<label class="col-form-label">Current winner:</label>
 								<div class="col-sm-6">
 									<label class="col-form-label winner-name"></label>
+									<input type="hidden" name="winner-name" id="winner-name"></input>
 								</div>
 							</div>
 
@@ -122,10 +127,11 @@
 								<label class="col-form-label">With difference:</label>
 								<div class="col-sm-6">
 									<label class="col-form-label winning-difference"></label>
+									<input type="hidden" name="winning-difference" id="winning-difference"></input>
 								</div>
 							</div>
 							<div class="form-group row">
-								<button class="btn btn-primary next" type="button">
+								<button class="btn btn-primary next final" type="button">
 									Save Game
 								</button>
 							</div>

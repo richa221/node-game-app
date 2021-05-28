@@ -40,35 +40,49 @@ $(document).ready(function() {
         },
     );
     Player1WinCount = Player2WinCount = 0;
+    if ($(this).hasClass("final")) {
+      saveUserData();
+    }
   });
 
   $(".player1Counter").click(function(e) {
     Player1WinCount++;
-    $(".Player1WinCount").empty().text(Player1WinCount);
+    $(".Player1WinCount, #Player1WinCount").empty().text(Player1WinCount);
+    $("#Player1WinCount").empty().val(Player1WinCount);
     decideWinner();
   });
 
   $(".player2Counter").click(function(e) {
     Player2WinCount++;
-    $(".Player2WinCount").empty().text(Player2WinCount);
+    $(".Player2WinCount, #Player2WinCount").empty().text(Player2WinCount);
+    $("#Player2WinCount").empty().val(Player2WinCount);
     decideWinner();
   });
 
   function decideWinner() {
     if (Player1WinCount === Player2WinCount) {
-      $(".winner-name").empty().text("Tie");
-      $(".winning-difference").empty();
+      $(".winner-name, #winner-name").empty().text("Tie").val("Tie");
+      $(".winning-difference, #winning-difference").empty().val("");
       return;
     }
 
     const player1Name = $.trim($("#player1Name").val());
     const player2Name = $.trim($("#player2Name").val());
 
-    $(".winner-name")
-        .empty()
-        .text(Player1WinCount > Player2WinCount ? player1Name : player2Name);
-    $(".winning-difference")
-        .empty()
-        .text(Math.abs(Player1WinCount - Player2WinCount));
+    const winner_name = Player1WinCount > Player2WinCount ? player1Name : player2Name;
+    const winning_difference = Math.abs(Player1WinCount - Player2WinCount);
+
+    $(".winner-name, #winner-name").empty().text(winner_name).val(winner_name);
+    $(".winning-difference, #winning-difference").empty().text(winning_difference).val(winning_difference);
   }
 });
+
+function saveUserData() {
+  $.ajax({
+    method: "POST",
+    url: "/save",
+    data: $("#my-form").serialize(),
+  })
+      .done(function(msg) {})
+      .fail(function(jqXHR, textStatus) {});
+}
