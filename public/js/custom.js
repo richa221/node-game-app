@@ -69,11 +69,11 @@ $(document).ready(function() {
     const player1Name = $.trim($("#player1Name").val());
     const player2Name = $.trim($("#player2Name").val());
 
-    const winner_name = Player1WinCount > Player2WinCount ? player1Name : player2Name;
-    const winning_difference = Math.abs(Player1WinCount - Player2WinCount);
+    const winnerName = Player1WinCount > Player2WinCount ? player1Name : player2Name;
+    const winningDifference = Math.abs(Player1WinCount - Player2WinCount);
 
-    $(".winner-name, #winner-name").empty().text(winner_name).val(winner_name);
-    $(".winning-difference, #winning-difference").empty().text(winning_difference).val(winning_difference);
+    $(".winnerName, #winnerName").empty().text(winnerName).val(winnerName);
+    $(".winningDifference, #winningDifference").empty().text(winningDifference).val(winningDifference);
   }
 });
 

@@ -4,8 +4,7 @@ const UserModel = require("../controllers/user.controller");
 /**
  * Test cases to application API's
  * Covered Routes:
- * (1) Login
- * (2) Register
+ * (1) Saving Game Detaild
  */
 
 describe("Game API Tests", () => {
@@ -16,8 +15,8 @@ describe("Game API Tests", () => {
 		"player2Name":"David",
 		"Player1WinCount":"2",
 		"Player2WinCount":"3",
-		"winner-name":"David",
-		"winning-difference":"1"
+		"winnerName":"David",
+		"winningDifference":"1"
 	};
 
 	/*
