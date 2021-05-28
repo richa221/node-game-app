@@ -12,7 +12,7 @@ app.use("/static", express.static(path.join(__dirname, "public")));
 require("./routes/user.routes")(app);
 
 app.listen(port, () => {
-  // console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Application running at http://localhost:${port}`);
 });
 
 module.exports = app;
